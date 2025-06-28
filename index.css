@@ -1,0 +1,91 @@
+body {
+    background-color: rgb(3, 13, 52);
+    color: rgb(0, 0, 0);
+}
+
+
+.greeting {
+    height: 400px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 80px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 100px;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to right, rgb(18, 68, 186), rgb(234, 19, 234));
+}
+
+#btn {
+    cursor: pointer;
+    text-align: center;
+    height: 50px;
+    width: 280px;
+    font-weight: 900;
+    
+    
+    border-radius: 10px;
+    border: 2px solid black;
+
+
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+   
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.btn::after,
+.btn::before {
+    content: "";
+    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    height: 50px;
+    width: 280px;
+    position: absolute;
+    border: 2px;
+    border-color: black;
+    z-index: -3;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 1.5s spin linear infinite;
+
+}
+
+#btn:hover{
+    background-color: yellowgreen;
+}
+.btn::before {
+    filter: blur(15px);
+}
+
+@keyframes spin {
+    0% {
+        --angle: 0deg;
+    }
+
+    100% {
+        --angle: 360deg;
+    }
+}
+
+span.material-symbols-outlined {
+    position: relative;
+    top: 6px;
+    padding-left: 10px;
+
+}
